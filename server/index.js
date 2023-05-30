@@ -30,13 +30,19 @@ const upload = multer({ storage: storage }).fields([
   { name: "file2", maxCount: 1 },
 ]);
 
+const uploadSingle = multer({ storage: storage })
+
+const EitherUpload = multer({ storage: storage }).fields([
+  { name: "file", maxCount: 1 },
+  { name: "file2", maxCount: 1 },
+]);
+
 app.get("/", function (req, res) {
   res.send("Hello World");
 });
 
-app.post("/", upload, function (req, res) {
-  res.send(req.body.data);
-  console.log(req.files.file[0].path);
+app.post("/multi", upload, function (req, res) {
+  
   let file = req.files.file[0].path;
   let file2 = req.files.file2[0].path;
   let result1 = exceltoxml(file);
@@ -44,7 +50,37 @@ app.post("/", upload, function (req, res) {
 
   console.log(result1);
   console.log(result2);
+ res.send(req.body.data);
 });
+
+
+app.post("/single", uploadSingle.single("file"), function (req, res) {
+  
+  let file = req.file.path;
+  let result1 = exceltoxml(file);
+
+  console.log(result1);
+ res.json(req.body);
+});
+
+app.post("/either", EitherUpload, function (req, res) {
+  
+  // let file = req.files.file[0].path;
+  // let file2 = req.files.file2[0].path;
+
+console.log(req.files)
+if(req.files.file) result1 = exceltoxml(req.files.file[0].path);
+else result1 = null
+if(req.files.file2) result2 = exceltoxml(req.files.file2[0].path)
+else result2=null
+  // let result1 = exceltoxml(file);
+  // let result2 = exceltoxml(file2);
+
+  console.log(result1);
+  console.log(result2);
+ res.send(req.body.data);
+});
+
 
 app.listen(8000, () => {
   console.log("server started");

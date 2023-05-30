@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const UploadXl = () => {
+const Either = () => {
   const [file, setFile] = useState();
   const [file2, setFile2] = useState();
 
@@ -16,7 +16,7 @@ const UploadXl = () => {
 
     formdata.append("data", "suresh");
     axios.post(
-      "http://localhost:8000/multi",
+      "http://localhost:8000/either",
       formdata
     ).then((data)=>{
 console.log(data)
@@ -37,4 +37,4 @@ console.log(data)
   );
 };
 
-export default UploadXl;
+export default Either;
