@@ -61,7 +61,7 @@ app.post("/single", uploadSingle.single("file"), function (req, res) {
   let result1 = exceltoxml(file);
 
   console.log(result1);
-  res.json(req.body);
+  res.json(result1);
 });
 
 app.post("/either", EitherUpload, function (req, res) {

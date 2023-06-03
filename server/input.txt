@@ -30,3 +30,12 @@ to
 
 
 <Questions>Question1</Questions><option1>option1a</option1><option2>option1b</option2><option3>option1c</option3><option4>option1d</option4><Questions>Question2</Questions><option1>option2a</option1><option2>option2b</option2><option3>option2c</option3><option4>option2d</option4>  to  <SIngle><Questions>Question1</Questions><option1>option1a</option1><option2>option1b</option2><option3>option1c</option3><option4>option1d</option4></Single><Single><Questions>Question2</Questions><option1>option2a</option1><option2>option2b</option2><option3>option2c</option3><option4>option2d</option4><Single>
+
+
+
+Create a react with react-bootstrap
+
+1.Where nav items are different test names which are dynamic
+2.Tab content contains accordian with question and checkboxes
+3.Question and checkboxes remain same for every test
+4.give result of test name question and their checkboxes selected
