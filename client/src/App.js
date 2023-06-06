@@ -1,9 +1,12 @@
 import './App.css';
+import Bardans from './Bardans';
 import Either from './Either';
 import MyForm from './Questions';
 import SingleUpload from './SingleUpload';
 import TestApp from './TestApp';
 import UploadXl from './UploadXl';
+import Your from './Your';
+import YourComponent from './YourComponent';
 
 function App() {
   return (
@@ -11,8 +14,10 @@ function App() {
      {/* <UploadXl />
      <SingleUpload />
      <Either /> */}
-     <MyForm />
-    
+     {/* <MyForm /> */}
+    {/* <Bardans /> */}
+    <YourComponent />
+    <Your />
     </div>
   );
 }
